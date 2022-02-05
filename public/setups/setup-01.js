@@ -12,3 +12,5 @@ renderer.setSize(
 document.querySelector(
   options.targetSelector
 ).appendChild(renderer.domElement)
+
+const scene = new THREE.Scene()
