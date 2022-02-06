@@ -9,4 +9,10 @@ const cube = new THREE.Mesh(
 
 scene.add(cube)
 
-renderer.render(scene, camera)
+renderer.setAnimationLoop(() => {
+  cube.rotation.x += 0.01
+  cube.rotation.y += 0.01
+  renderer.render(scene, camera)
+})
+
+
