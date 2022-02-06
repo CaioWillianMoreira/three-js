@@ -1,6 +1,7 @@
 const options = {
   targetSelector: '#scene',
-  width: 800, height: 600
+  width: 800, height: 600,
+  backgroundcolor: 0x212121
 }
 
 const renderer = new THREE.WebGLRenderer()
@@ -14,3 +15,13 @@ document.querySelector(
 ).appendChild(renderer.domElement)
 
 const scene = new THREE.Scene()
+scene.background = new THREE.Color(
+  options.backgroundcolor
+)
+
+const camera = new THREE.PerspectiveCamera(
+  50,
+  options.width / options.height
+)
+
+camera.position.z = 5
